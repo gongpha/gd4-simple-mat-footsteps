@@ -1,0 +1,14 @@
+[gd_resource type="StandardMaterial3D" load_steps=5 format=3 uid="uid://bshq512gj7xke"]
+
+[ext_resource type="AudioStream" uid="uid://bjd2judl421sc" path="res://footstep3.wav" id="1_wgxhv"]
+[ext_resource type="AudioStream" uid="uid://db5ofalnyb3am" path="res://jump3.wav" id="2_exxnc"]
+[ext_resource type="Script" path="res://soundpack.gd" id="3_atdgh"]
+
+[sub_resource type="Resource" id="Resource_0451d"]
+script = ExtResource("3_atdgh")
+footstep = ExtResource("1_wgxhv")
+jump = ExtResource("2_exxnc")
+
+[resource]
+albedo_color = Color(0, 1, 0, 1)
+metadata/soundpack = SubResource("Resource_0451d")

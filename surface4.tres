@@ -1,0 +1,22 @@
+[gd_resource type="StandardMaterial3D" load_steps=7 format=3 uid="uid://b7iaawlfyrp6"]
+
+[ext_resource type="AudioStream" uid="uid://dayqcloa5hmu7" path="res://footstep4.wav" id="1_jai1c"]
+[ext_resource type="AudioStream" uid="uid://7k55en38ksww" path="res://jump4.wav" id="2_2c1j3"]
+[ext_resource type="AudioStream" uid="uid://ghaccfjul3ur" path="res://footstep4_2.wav" id="2_i7g0j"]
+[ext_resource type="Script" path="res://soundpack.gd" id="3_76ps0"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_l46m1"]
+streams_count = 2
+stream_0/stream = ExtResource("1_jai1c")
+stream_0/weight = 1.0
+stream_1/stream = ExtResource("2_i7g0j")
+stream_1/weight = 1.0
+
+[sub_resource type="Resource" id="Resource_ee321"]
+script = ExtResource("3_76ps0")
+footstep = SubResource("AudioStreamRandomizer_l46m1")
+jump = ExtResource("2_2c1j3")
+
+[resource]
+albedo_color = Color(0, 0, 1, 1)
+metadata/soundpack = SubResource("Resource_ee321")

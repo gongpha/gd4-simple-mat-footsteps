@@ -140,6 +140,20 @@ func _physics_process(delta : float) -> void :
 	if Input.get_mouse_mode() != Input.MOUSE_MODE_CAPTURED :
 		return
 		
+	var raycast3d : RayCast3D = %RayCast3D
+	# #################
+	var body : CollisionObject3D = raycast3d.get_collider()
+	if body :
+		var shapeidx : int = raycast3d.get_collider_shape()
+		var shape := body.shape_owner_get_owner(shapeidx)
+		if shape.has_meta(&'mb_mat') :
+			# detected a material
+			var mat : Material = shape.get_meta(&'mb_mat')
+			%matd.text = "Facing to : " + mat.resource_path
+	else :
+		%matd.text = "Facing to : none"
+	# #################
+		
 	wishdir = (head if noclip else around).global_transform.basis * Vector3((
 		Input.get_axis(&"move_left", &"move_right")
 	), 0, (

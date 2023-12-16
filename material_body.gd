@@ -1,7 +1,7 @@
 extends Node3D
 class_name MaterialBody
 
-const MATBODY_PHYSICS_LAYER := 1 << 2 # layer 2
+const MATBODY_PHYSICS_LAYER := 1 << 1 # layer 2
 
 var meshlib : Dictionary # < Mesh, [each surface convex] >
 var meshins : Array[MeshInstance3D]

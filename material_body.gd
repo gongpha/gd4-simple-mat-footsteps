@@ -39,7 +39,6 @@ func generate_matbody() -> void :
 						mat = m.mesh.surface_get_material(i)
 						if !mat :
 							continue
-						continue
 						
 				var shape := CollisionShape3D.new()
 				shape.transform = global_transform.affine_inverse() * m.global_transform
